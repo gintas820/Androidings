@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">Variety</string>
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-
+    <color name="backColor">#565465</color>
+    <string name="close">Close</string>
+    <string name="calculate">Calculate</string>
+    <string name="clear">Clear</string>
+    <string name="hours">Enter Your Hours Here</string>
+    <string name="rate">Enter Your Rate Here</string>
+    <string name="result">0.0</string>
 </resources>
