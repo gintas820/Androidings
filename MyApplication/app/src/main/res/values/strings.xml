@@ -8,5 +8,5 @@
     <string name="clear">Clear</string>
     <string name="hours">Enter Your Hours Here</string>
     <string name="rate">Enter Your Rate Here</string>
-    <string name="result">0.0</string>
+    <string name="result"> </string>
 </resources>
