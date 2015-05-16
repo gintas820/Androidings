@@ -2,6 +2,7 @@ package com.example.tuf40653.variety;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -34,5 +35,16 @@ public class HealthClub extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    //Close current window
+    public void hcClose(View view){
+        System.exit(0);
+    }
+
+    //Restore all entries to defaults
+    public void hcClear(View view){
+        //Retrieve all the changeable views by id and set them back to default values
+
     }
 }
