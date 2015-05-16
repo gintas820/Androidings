@@ -50,14 +50,18 @@ public class PayCalc extends ActionBarActivity {
         EditText hours = (EditText) findViewById(R.id.Hours);
         EditText rate = (EditText) findViewById(R.id.Rate);
         TextView resultText = (TextView) findViewById(R.id.TextShowResult);
-        double amount = Calc.calculatePay(Double.parseDouble(hours.getText().toString()), Double.parseDouble(rate.getText().toString()));
-        double net = amount - (Calc.calculateSIT(amount) + Calc.calculateFIT(amount) + Calc.calculateSS(amount) + Calc.calculateMed(amount));
-        resultText.setText("Gross Pay:" + String.valueOf(amount) +
-                "\nState Income Tax Deduction:" + String.valueOf(Calc.calculateSIT(amount)) +
-                "\nFederal Income Tax Deduction:" + String.valueOf(Calc.calculateFIT(amount)) +
-                "\nSocial Security:" + String.valueOf(Calc.calculateSS(amount)) +
-                "\nMedicare:" + String.valueOf(Calc.calculateMed(amount)) +
-                "\nNet Pay:" + String.valueOf(net));
+        if(Double.parseDouble(hours.getText().toString()) == 0 && Double.parseDouble(rate.getText().toString()) == 0){
+            resultText.setText(R.string.zero_input);
+        }else {
+            double amount = Calc.calculatePay(Double.parseDouble(hours.getText().toString()), Double.parseDouble(rate.getText().toString()));
+            double net = amount - (Calc.calculateSIT(amount) + Calc.calculateFIT(amount) + Calc.calculateSS(amount) + Calc.calculateMed(amount));
+            resultText.setText("Gross Pay:" + String.format("%.2f", Double.parseDouble(String.valueOf(amount))) +
+                    "\nState Income Tax Deduction:" + String.format("%.2f", Double.parseDouble(String.valueOf(Calc.calculateSIT(amount)))) +
+                    "\nFederal Income Tax Deduction:" + String.format("%.2f", Double.parseDouble(String.valueOf(Calc.calculateFIT(amount)))) +
+                    "\nSocial Security:" + String.format("%.2f", Double.parseDouble(String.valueOf(Calc.calculateSS(amount)))) +
+                    "\nMedicare:" + String.format("%.2f", Double.parseDouble(String.valueOf(Calc.calculateMed(amount)))) +
+                    "\nNet Pay:" + String.format("%.2f", Double.parseDouble(String.valueOf(net))));
+        }
     }
 
     //Will clear the current entries in the EditText fields

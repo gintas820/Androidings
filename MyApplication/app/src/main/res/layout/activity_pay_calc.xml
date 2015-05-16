@@ -73,11 +73,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/result"
-        android:textSize="12sp"
+        android:textSize="15sp"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/linLayout2"
         android:layout_marginTop="20dp"
-        android:background="@color/textBack"
+        android:textColor="@color/textColor"
+        android:background="@drawable/round_corner"
+        android:fadingEdge="horizontal"
+        android:fadingEdgeLength="20dp"
+        android:gravity="center"
+        android:padding="5dp"
         />
 
             <Button
