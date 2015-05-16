@@ -19,9 +19,20 @@
     <string name="blank"> </string>
     <string name="zeros">0.0</string>
     <string name="title_activity_main">MainActivity</string>
-
     <string name="welcome">Welcome screen</string>
-    <string name="title_activity_health_club">HealthClub</string>
-
-    <string name="hello_world">Hello world!</string>
+    <string name="memFeeCalc">Membership Fee Calculator</string>
+    <string name="memType">Type of Membership</string>
+    <string name="stdAdult">Standard Adult</string>
+    <string name="child">Child</string>
+    <string name="student">Student</string>
+    <string name="senior">Senior Citizen</string>
+    <string name="opts">Options</string>
+    <string name="yoga">Yoga</string>
+    <string name="Karate">Karate</string>
+    <string name="perTrainer">Personal Trainer</string>
+    <string name="memLength">Membership Length</string>
+    <string name="enterMonths">Enter the Number of Months</string>
+    <string name="memFee">Membership Fees</string>
+    <string name="monthFee">Monthly Fee</string>
+    <string name="total">Total</string>
 </resources>

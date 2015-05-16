@@ -50,5 +50,8 @@ public class MainActivity extends ActionBarActivity {
         startActivity(intent);
     }
 
+    public void btnClose(View view){
+        System.exit(0);
+    }
     /*Might eventually need an onPause() method */
 }

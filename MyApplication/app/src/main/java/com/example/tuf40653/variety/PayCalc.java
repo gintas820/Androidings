@@ -73,20 +73,4 @@ public class PayCalc extends ActionBarActivity {
         rate.setText(R.string.zeros);
         res.setText(R.string.result);
     }
-
-
-
-    /* THIS BLOCK WASN'T WORKING THE WAY IT WAS INTENDED TO
-    //Will execute certain actions when the hours EditText field is clicked on
-    public void hoursClick(View view){
-        EditText hours = (EditText) findViewById(R.id.Hours);
-        hours.setText(R.string.blank);
-    }
-
-    //WIll execute certain actions when the rate EditText field is clicked on
-    public void rateClick(View view){
-        EditText rate = (EditText) findViewById(R.id.Rate);
-        rate.setText(R.string.blank);
-    }
-    */
 }
