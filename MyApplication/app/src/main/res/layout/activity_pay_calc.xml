@@ -79,8 +79,6 @@
         android:layout_marginTop="20dp"
         android:textColor="@color/textColor"
         android:background="@drawable/round_corner"
-        android:fadingEdge="horizontal"
-        android:fadingEdgeLength="20dp"
         android:gravity="center"
         android:padding="5dp"
         />

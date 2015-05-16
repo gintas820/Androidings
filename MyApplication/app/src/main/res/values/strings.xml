@@ -2,6 +2,8 @@
 <resources>
     <string name="app_name">Variety</string>
     <string name="action_settings">Settings</string>
+    <string name="payCalc">Pay Calculator</string>
+    <string name="healthClub">Health Club</string>
     <color name="backColor">#565465</color>
     <color name="textBack">#097124</color>
     <color name="btnColor">#34A678</color>
@@ -16,4 +18,10 @@
     <string name="zero_input">Both entries can\'t be zeros</string>
     <string name="blank"> </string>
     <string name="zeros">0.0</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="welcome">Welcome screen</string>
+    <string name="title_activity_health_club">HealthClub</string>
+
+    <string name="hello_world">Hello world!</string>
 </resources>
