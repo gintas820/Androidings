@@ -9,33 +9,63 @@
     tools:context=".PayCalc"
     android:background="@color/backColor">
 
-    <EditText
-        android:id="@+id/Hours"
-        android:layout_width="200dp"
+
+    <LinearLayout
+        android:id="@+id/linLayout1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
-        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
         android:gravity="center"
-        android:text="@string/hours"
-        android:inputType="numberDecimal|numberSigned"
-        android:selectAllOnFocus="true"
-        />
+        >
 
-        <!-- android:onClick="hoursClick" -->
+        <TextView
+            android:id="@+id/textHours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hours"
+            android:textSize="20dp"
+            />
 
+        <EditText
+            android:id="@+id/Hours"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/zeros"
+            android:inputType="numberDecimal|numberSigned"
+            android:selectAllOnFocus="true"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linLayout1"
+        android:gravity="center"
+        >
+
+        <TextView
+            android:id="@+id/textRate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rate"
+            android:paddingRight="10sp"
+            android:textSize="21sp"
+            />
 
     <EditText
         android:id="@+id/Rate"
-        android:layout_width="200dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:text="@string/rate"
-        android:layout_below="@+id/Hours"
+        android:text="@string/zeros"
         android:gravity="center"
-        android:layout_centerHorizontal="true"
         android:inputType="numberDecimal|numberSigned"
         android:selectAllOnFocus="true"
         />
-        <!--android:onClick="rateClick"-->
+
+    </LinearLayout>
 
 
     <TextView
@@ -45,38 +75,48 @@
         android:text="@string/result"
         android:textSize="12sp"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/Rate"
+        android:layout_below="@+id/linLayout2"
         android:layout_marginTop="20dp"
+        android:background="@color/textBack"
         />
 
             <Button
                 android:id="@+id/Calc"
                 android:layout_width="110dp"
-                android:layout_height="40dp"
+                android:layout_height="30dp"
                 android:text="@string/calculate"
                 android:layout_toLeftOf="@+id/Clear"
                 android:layout_alignParentBottom="true"
                 android:onClick="calcClick"
+                android:background="@drawable/picture_button"
+                android:layout_margin="5dp"
+
                 />
 
             <Button
                 android:id="@+id/Clear"
                 android:layout_width="110dp"
-                android:layout_height="40dp"
+                android:layout_height="30dp"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:text="@string/clear"
                 android:onClick="clearClick"
+                android:background="@drawable/picture_button"
+
+                android:layout_margin="5dp"
                 />
 
             <Button
                 android:id="@+id/Close"
                 android:layout_width="110dp"
-                android:layout_height="40dp"
+                android:layout_height="30dp"
                 android:layout_alignParentBottom="true"
                 android:layout_toRightOf="@+id/Clear"
                 android:text="@string/close"
                 android:onClick="onClose"
+                android:background="@drawable/picture_button"
+                android:layout_margin="5dp"
+                
                 />
 
 

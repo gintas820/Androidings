@@ -65,10 +65,11 @@ public class PayCalc extends ActionBarActivity {
         EditText hrs = (EditText) findViewById(R.id.Hours);
         EditText rate = (EditText) findViewById(R.id.Rate);
         TextView res = (TextView) findViewById(R.id.TextShowResult);
-        hrs.setText(R.string.hours);
-        rate.setText(R.string.rate);
+        hrs.setText(R.string.zeros);
+        rate.setText(R.string.zeros);
         res.setText(R.string.result);
     }
+
 
 
     /* THIS BLOCK WASN'T WORKING THE WAY IT WAS INTENDED TO

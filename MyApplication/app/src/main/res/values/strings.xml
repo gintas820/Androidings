@@ -3,11 +3,14 @@
     <string name="app_name">Variety</string>
     <string name="action_settings">Settings</string>
     <color name="backColor">#565465</color>
+    <color name="textBack">#097124</color>
+    <color name="btnColor">#34A678</color>
     <string name="close">Close</string>
     <string name="calculate">Calculate</string>
     <string name="clear">Clear</string>
-    <string name="hours">Enter Your Hours Here</string>
-    <string name="rate">Enter Your Rate Here</string>
+    <string name="hours">Enter Hours</string>
+    <string name="rate">Enter Rate</string>
     <string name="result"> </string>
     <string name="blank"> </string>
+    <string name="zeros">0.0</string>
 </resources>
