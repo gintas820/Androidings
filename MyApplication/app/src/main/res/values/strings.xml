@@ -24,6 +24,7 @@
     <string name="memFeeCalc">Membership Fee Calculator</string>
     <string name="memType">Type of Membership</string>
     <string name="stdAdult">Standard Adult</string>
+    <string name="subAdult">Substandard Adult</string>
     <string name="child">Child</string>
     <string name="student">Student</string>
     <string name="senior">Senior Citizen</string>
@@ -31,6 +32,8 @@
     <string name="yoga">Yoga</string>
     <string name="Karate">Karate</string>
     <string name="perTrainer">Personal Trainer</string>
+    <string name="candle">Candlelight Dinner</string>
+    <string name="beach">Walk on the Beach</string>
     <string name="memLength">Membership Length</string>
     <string name="enterMonths">Enter the Number of Months</string>
     <string name="memFee">Membership Fees</string>
