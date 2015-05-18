@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
 
 
 public class HealthClub extends ActionBarActivity {
@@ -13,6 +14,8 @@ public class HealthClub extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_health_club);
+        EditText editText = (EditText) findViewById(R.id.editMonths);
+        editText.clearFocus();
     }
 
     @Override
@@ -47,4 +50,7 @@ public class HealthClub extends ActionBarActivity {
         //Retrieve all the changeable views by id and set them back to default values
 
     }
+
+    //Needs to have a method that will be called whenever something is changed in the form
+    //Upon change it needs to update the monthly fee and the total
 }

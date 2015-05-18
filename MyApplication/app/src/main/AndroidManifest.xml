@@ -21,7 +21,8 @@
         </activity>
         <activity
             android:name=".HealthClub"
-            android:label="@string/healthClub" >
+            android:label="@string/healthClub"
+            android:windowSoftInputMode="stateHidden">
         </activity>
     </application>
 

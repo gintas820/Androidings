@@ -4,6 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:fadeScrollbars="true"
+    android:descendantFocusability="blocksDescendants"
+    android:focusableInTouchMode="true"
     android:scrollbarFadeDuration="200">
 
     <RelativeLayout
@@ -23,7 +25,8 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:text="@string/memFeeCalc"
-            android:gravity="center"/>
+            android:gravity="center"
+            />
 
         <FrameLayout
             android:id="@+id/topGroup"
@@ -31,13 +34,17 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/textTitle"
             android:layout_marginTop="20dp"
+            android:padding="5dp"
+            android:background="@drawable/round_corner"
             >
+
 
             <TextView
                 android:id="@+id/textType"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/memType"/>
+                android:text="@string/memType"
+                />
 
             <RadioGroup
                 android:layout_width="match_parent"
@@ -50,7 +57,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/stdAdult"
-                    android:checked="true"/>
+                    />
                 <RadioButton
                     android:id="@+id/radButton2"
                     android:layout_width="wrap_content"
@@ -66,7 +73,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/senior"/>
-
             </RadioGroup>
         </FrameLayout>
 
@@ -75,7 +81,9 @@
                 android:layout_marginTop="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/topGroup">
+                android:layout_below="@+id/topGroup"
+                android:padding="5dp"
+                android:background="@drawable/round_corner">
 
                 <TextView
                     android:id="@+id/options"
@@ -106,6 +114,7 @@
                     android:layout_below="@+id/chkKarate"
                     android:layout_marginLeft="50sp"/>
 
+
             </RelativeLayout>
 
         <RelativeLayout
@@ -113,7 +122,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/secondGroup"
-            android:layout_marginTop="15dp">
+            android:layout_marginTop="15dp"
+            android:padding="5dp"
+            android:focusableInTouchMode="true"
+            android:background="@drawable/round_corner">
 
             <TextView
                 android:id="@+id/length"
@@ -131,11 +143,15 @@
                 android:layout_marginLeft="50sp"/>
 
             <EditText
+
                 android:id="@+id/editMonths"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/numMonths"
                 android:layout_marginLeft="50dp"
+                android:inputType="numberDecimal|numberSigned"
+                android:text="@string/zero"
+                android:gravity="center"
                 />
 
         </RelativeLayout>
@@ -145,7 +161,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/thirdGroup"
-            android:layout_marginTop="15dp">
+            android:layout_marginTop="15dp"
+            android:padding="5dp"
+            android:background="@drawable/round_corner">
 
             <TextView
                 android:id="@+id/memFees"
@@ -161,7 +179,6 @@
                 android:layout_below="@+id/memFees"
                 android:layout_marginTop="15dp"
                 android:layout_marginLeft="50dp"/>
-
             <TextView
                 android:id="@+id/total"
                 android:layout_width="wrap_content"
@@ -184,16 +201,20 @@
             <Button
                 android:id="@+id/hcClear"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginRight="5dp"
                 android:text="@string/clear"
-                android:onClick="hcClear"/>
+                android:onClick="hcClear"
+                android:background="@drawable/picture_button"/>
 
             <Button
                 android:id="@+id/hcClose"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginLeft="5dp"
                 android:text="@string/close"
                 android:onClick="hcClose"
+                android:background="@drawable/picture_button"
                 />
 
         </LinearLayout>
