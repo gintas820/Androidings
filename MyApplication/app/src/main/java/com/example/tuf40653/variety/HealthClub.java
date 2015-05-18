@@ -51,6 +51,14 @@ public class HealthClub extends ActionBarActivity {
 
     }
 
+    //Will shrink the area it's currently in, and if it's already shrunk, expand back to original state
+    public void shrinkClick(View view){
+        //Select the parent element, and graciously clear it of all the things in it
+
+
+
+    }
+
     //Needs to have a method that will be called whenever something is changed in the form
     //Upon change it needs to update the monthly fee and the total
 }

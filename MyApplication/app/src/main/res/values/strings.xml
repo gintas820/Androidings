@@ -9,6 +9,8 @@
     <color name="btnColor">#34A678</color>
     <color name="almostBack">#464455</color>
     <color name="textColor">#EFEFEF</color>
+    <color name="roundedBtn">#445678</color>
+    <color name="roundedBtnPressed">#887711</color>
     <string name="close">Close</string>
     <string name="calculate">Calculate</string>
     <string name="clear">Clear</string>
@@ -28,6 +30,7 @@
     <string name="child">Child</string>
     <string name="student">Student</string>
     <string name="senior">Senior Citizen</string>
+    <string name="seniorNon">Senior non-citizen</string>
     <string name="opts">Options</string>
     <string name="yoga">Yoga</string>
     <string name="Karate">Karate</string>
@@ -39,4 +42,6 @@
     <string name="memFee">Membership Fees</string>
     <string name="monthFee">Monthly Fee</string>
     <string name="total">Total</string>
+    <string name="shrink">Shrink</string>
+    <string name="expand">Expand</string>
 </resources>

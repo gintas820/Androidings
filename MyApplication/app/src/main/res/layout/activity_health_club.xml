@@ -2,8 +2,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="ma"
+    android:layout_height="match_parent"
     tools:context="com.example.tuf40653.variety.HealthClub"
+    android:background="@color/backColor"
     >
 
     <TextView
@@ -25,6 +26,7 @@
     android:focusableInTouchMode="true"
     android:scrollbarFadeDuration="200"
     android:background="@color/backColor"
+    android:layout_below="@id/textTitle"
     >
 
 
@@ -48,7 +50,6 @@
             android:background="@drawable/round_corner"
             >
 
-
             <TextView
                 android:id="@+id/textType"
                 android:layout_width="match_parent"
@@ -60,13 +61,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30sp"
-                android:layout_marginLeft="50sp">
+                android:layout_marginLeft="50sp"
+
+                >
 
                 <RadioButton
                     android:id="@+id/radButton1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/stdAdult"
+                    android:checked="true"
                     />
                 <RadioButton
                     android:id="@+id/radButton5"
@@ -88,7 +92,22 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/senior"/>
+                <RadioButton
+                    android:id="@+id/radButton6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/seniorNon"/>
             </RadioGroup>
+
+            <Button
+                android:id="@+id/shrink1"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_gravity="center|right"
+                android:text="@string/shrink"
+                android:onClick="shrinkClick"
+                android:background="@drawable/shrink_button"/>
+
         </FrameLayout>
 
             <RelativeLayout
