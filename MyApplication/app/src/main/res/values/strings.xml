@@ -38,10 +38,12 @@
     <string name="candle">Candlelight Dinner</string>
     <string name="beach">Walk on the Beach</string>
     <string name="memLength">Membership Length</string>
-    <string name="enterMonths">Enter the Number of Months</string>
+    <string name="enterMonths">Enter Number of Months</string>
     <string name="memFee">Membership Fees</string>
     <string name="monthFee">Monthly Fee</string>
     <string name="total">Total</string>
+    <string name="shrink1">Shrink Type of Membership</string>
+    <string name="expand1">Expand Type of Membership</string>
     <string name="shrink">Shrink</string>
     <string name="expand">Expand</string>
 </resources>

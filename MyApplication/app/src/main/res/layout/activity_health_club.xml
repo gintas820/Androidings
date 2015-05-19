@@ -27,6 +27,7 @@
     android:scrollbarFadeDuration="200"
     android:background="@color/backColor"
     android:layout_below="@id/textTitle"
+
     >
 
 
@@ -41,11 +42,20 @@
         android:layout_below="@+id/textTitle"
         >
 
+        <Button
+            android:id="@+id/shrink1"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="center|right"
+            android:text="@string/shrink1"
+            android:onClick="shrinkClick"
+            android:background="@drawable/shrink_button"/>
+
         <FrameLayout
             android:id="@+id/topGroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="42dp"
             android:padding="5dp"
             android:background="@drawable/round_corner"
             >
@@ -58,6 +68,7 @@
                 />
 
             <RadioGroup
+                android:id="@+id/radGroup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30sp"
@@ -99,14 +110,7 @@
                     android:text="@string/seniorNon"/>
             </RadioGroup>
 
-            <Button
-                android:id="@+id/shrink1"
-                android:layout_width="wrap_content"
-                android:layout_height="25dp"
-                android:layout_gravity="center|right"
-                android:text="@string/shrink"
-                android:onClick="shrinkClick"
-                android:background="@drawable/shrink_button"/>
+
 
         </FrameLayout>
 
@@ -164,6 +168,15 @@
                     android:layout_marginLeft="50sp"
                     />
 
+                <Button
+                    android:id="@+id/shrink2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:text="@string/shrink"
+                    android:background="@drawable/shrink_button"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    />
 
             </RelativeLayout>
 
@@ -204,6 +217,16 @@
                 android:gravity="center"
                 />
 
+            <Button
+                android:id="@+id/shrink3"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:text="@string/shrink"
+                android:background="@drawable/shrink_button"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                />
+
         </RelativeLayout>
 
         <RelativeLayout
@@ -241,6 +264,7 @@
 
 
         <LinearLayout
+            android:id="@+id/fifthGroup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/fourthGroup"
