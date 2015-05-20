@@ -16,6 +16,7 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -73,6 +74,7 @@ public class HealthClub extends ActionBarActivity {
         RelativeLayout relativeLayout1 = (RelativeLayout) findViewById(R.id.thirdGroup);
         RelativeLayout relativeLayout2 = (RelativeLayout) findViewById(R.id.fourthGroup);
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.fifthGroup);
+        //ScrollView scrollView = (ScrollView) findViewById(R.id.encompassScroll);
 
         //Have the top and height of each of the layout groups available
         int topFra = frameLayout.getTop();      int heightFra = frameLayout.getHeight();
@@ -80,6 +82,7 @@ public class HealthClub extends ActionBarActivity {
         int topRel1 = relativeLayout1.getTop(); int heightRel1 = relativeLayout1.getHeight();
         int topRel2 = relativeLayout2.getTop(); int heightRel2 = relativeLayout2.getHeight();
         int topLin = linearLayout.getTop();     int heightLin = linearLayout.getHeight();
+                                                //int heightScr = scrollView.getHeight();
 
         if(btn.getText().toString().contains("Shrink")){
             btn.setText(R.string.expand1);
@@ -90,6 +93,7 @@ public class HealthClub extends ActionBarActivity {
             relativeLayout1.setY(topFra + 30 + heightRel + 30);
             relativeLayout2.setY(topFra + 30 + heightRel + 30 + heightRel1 + 30);
             linearLayout.setY(topFra + 30 + heightRel + 30 + heightRel1 + 30 + heightRel2 + 30);
+
         }else{
             btn.setText(R.string.shrink1);
             frameLayout.setVisibility(View.VISIBLE);

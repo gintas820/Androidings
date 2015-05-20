@@ -19,7 +19,7 @@
         />
 
 <ScrollView
-
+    android:id="@+id/encompassScroll"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:fadeScrollbars="true"
@@ -168,15 +168,6 @@
                     android:layout_marginLeft="50sp"
                     />
 
-                <Button
-                    android:id="@+id/shrink2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="25dp"
-                    android:text="@string/shrink"
-                    android:background="@drawable/shrink_button"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentRight="true"
-                    />
 
             </RelativeLayout>
 
@@ -215,16 +206,6 @@
                 android:inputType="numberDecimal|numberSigned"
                 android:text="@string/zero"
                 android:gravity="center"
-                />
-
-            <Button
-                android:id="@+id/shrink3"
-                android:layout_width="wrap_content"
-                android:layout_height="25dp"
-                android:text="@string/shrink"
-                android:background="@drawable/shrink_button"
-                android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"
                 />
 
         </RelativeLayout>
