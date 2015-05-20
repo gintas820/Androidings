@@ -74,19 +74,22 @@ public class HealthClub extends ActionBarActivity {
         RelativeLayout relativeLayout2 = (RelativeLayout) findViewById(R.id.fourthGroup);
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.fifthGroup);
 
-        int topFra = frameLayout.getTop();      int bottomFra = frameLayout.getBottom();        int heightFra = frameLayout.getHeight();
-        int topRel = relativeLayout.getTop();   int bottomRel = relativeLayout.getBottom();     int heightRel = relativeLayout.getHeight();
-        int topRel1 = relativeLayout1.getTop(); int bottomRel1 = relativeLayout1.getBottom();   int heightRel1 = relativeLayout1.getHeight();
-        int topRel2 = relativeLayout2.getTop(); int bottomRel2 = relativeLayout2.getBottom();   int heightRel2 = relativeLayout2.getHeight();
-        int topLin = linearLayout.getTop();     int bottomLin = linearLayout.getBottom();       int heightLin = linearLayout.getHeight();
+        //Have the top and height of each of the layout groups available
+        int topFra = frameLayout.getTop();      int heightFra = frameLayout.getHeight();
+        int topRel = relativeLayout.getTop();   int heightRel = relativeLayout.getHeight();
+        int topRel1 = relativeLayout1.getTop(); int heightRel1 = relativeLayout1.getHeight();
+        int topRel2 = relativeLayout2.getTop(); int heightRel2 = relativeLayout2.getHeight();
+        int topLin = linearLayout.getTop();     int heightLin = linearLayout.getHeight();
 
         if(btn.getText().toString().contains("Shrink")){
             btn.setText(R.string.expand1);
             frameLayout.setVisibility(View.INVISIBLE);
-            relativeLayout.setY(topFra);
-            relativeLayout1.setY(heightRel + 25);
-            relativeLayout2.setY(heightRel + heightRel1 + 40);
-            linearLayout.setY(heightRel + heightRel1 + heightRel2 + 55);
+
+            //Take original measurements of the views and use them as references to move them around
+            relativeLayout.setY(topFra + 30);
+            relativeLayout1.setY(topFra + 30 + heightRel + 30);
+            relativeLayout2.setY(topFra + 30 + heightRel + 30 + heightRel1 + 30);
+            linearLayout.setY(topFra + 30 + heightRel + 30 + heightRel1 + 30 + heightRel2 + 30);
         }else{
             btn.setText(R.string.shrink1);
             frameLayout.setVisibility(View.VISIBLE);
