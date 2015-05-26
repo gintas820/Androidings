@@ -4,6 +4,8 @@ import android.app.ActionBar;
 import android.provider.MediaStore;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
@@ -33,7 +36,9 @@ public class HealthClub extends ActionBarActivity {
         editText.clearFocus();
 
         TextView textMonthly = (TextView) findViewById(R.id.monFee);
+        TextView textTotal = (TextView) findViewById(R.id.total);
         textMonthly.setText((getString(R.string.monthFee)) + ": 40");
+        textTotal.setText(getString(R.string.total) + ": 0");
 
     }
 
@@ -115,14 +120,32 @@ public class HealthClub extends ActionBarActivity {
         RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radGroup);
         RadioButton radioButton = (RadioButton) findViewById(radioGroup.getCheckedRadioButtonId());
         TextView textMonthly = (TextView) findViewById(R.id.monFee);
+        final TextView textTotal = (TextView) findViewById(R.id.total);
+        EditText editText = (EditText) findViewById(R.id.editMonths);
 
-        double amount = getMonthlyFee(radioButton.getText().toString());
-        double total = 0;
+        double amount = getMonthlyFee(radioButton.getText().toString());                //amount will keep monthly
+        amount += getOptionsFee();
+        double total = amount * Double.parseDouble(editText.getText().toString());      //total will keep amount * months
+
+        textMonthly.setText((getString(R.string.monthFee)) + ": " + amount);
+        textTotal.setText(getString(R.string.total) + ": " + total);
+
+        final double total2 = total;
 
 
-        total += amount;
+        editText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
 
-        textMonthly.setText((getString(R.string.monthFee)) + ": " + total);
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                textTotal.setText(getString(R.string.total) + ": " + total2);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {            }
+        });
 
     }
 
@@ -152,5 +175,34 @@ public class HealthClub extends ActionBarActivity {
                 amount = 0;
         }
         return amount;
+    }
+
+    //Gets the options fee
+    private  double getOptionsFee(){
+        double fee = 0;
+
+        CheckBox checkBox1 = (CheckBox) findViewById(R.id.chkYoga);
+        CheckBox checkBox2 = (CheckBox) findViewById(R.id.chkKarate);
+        CheckBox checkBox3 = (CheckBox) findViewById(R.id.chkPersonal);
+        CheckBox checkBox4 = (CheckBox) findViewById(R.id.chkCandle);
+        CheckBox checkBox5 = (CheckBox) findViewById(R.id.chkBeach);
+
+        if(checkBox1.isChecked()){
+            fee += 10;
+        }
+        if(checkBox2.isChecked()){
+            fee += 20;
+        }
+        if(checkBox3.isChecked()){
+            fee += 50;
+        }
+        if(checkBox4.isChecked()){
+            fee += 95;
+        }
+        if(checkBox5.isChecked()){
+            fee += 125;
+        }
+
+        return fee;
     }
 }

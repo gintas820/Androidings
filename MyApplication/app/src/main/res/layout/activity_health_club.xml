@@ -6,7 +6,7 @@
     tools:context="com.example.tuf40653.variety.HealthClub"
     android:background="@color/backColor"
     android:focusableInTouchMode="true"
-
+    android:onClick="clickThings"
     >
 
     <TextView
@@ -29,7 +29,7 @@
     android:scrollbarFadeDuration="200"
     android:background="@color/backColor"
     android:layout_below="@id/textTitle"
-
+    android:onClick="clickThings"
     >
 
 
@@ -145,6 +145,7 @@
                     android:text="@string/yoga"
                     android:layout_below="@+id/options"
                     android:layout_marginLeft="50sp"
+                    android:onClick="clickThings"
                     />
                 <CheckBox
                     android:id="@+id/chkKarate"
@@ -152,14 +153,16 @@
                     android:layout_height="wrap_content"
                     android:text="@string/Karate"
                     android:layout_below="@+id/chkYoga"
-                    android:layout_marginLeft="50sp"/>
+                    android:layout_marginLeft="50sp"
+                    android:onClick="clickThings"/>
                 <CheckBox
                     android:id="@+id/chkPersonal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/perTrainer"
                     android:layout_below="@+id/chkKarate"
-                    android:layout_marginLeft="50sp"/>
+                    android:layout_marginLeft="50sp"
+                    android:onClick="clickThings"/>
                 <CheckBox
                     android:id="@+id/chkCandle"
                     android:layout_width="wrap_content"
@@ -167,6 +170,7 @@
                     android:text="@string/candle"
                     android:layout_below="@id/chkPersonal"
                     android:layout_marginLeft="50sp"
+                    android:onClick="clickThings"
                     />
                 <CheckBox
                     android:id="@+id/chkBeach"
@@ -175,6 +179,7 @@
                     android:text="@string/beach"
                     android:layout_below="@id/chkCandle"
                     android:layout_marginLeft="50sp"
+                    android:onClick="clickThings"
                     />
 
 
@@ -215,6 +220,7 @@
                 android:inputType="numberDecimal|numberSigned"
                 android:text="@string/zero"
                 android:gravity="center"
+                
                 />
 
         </RelativeLayout>
