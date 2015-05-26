@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
@@ -30,6 +31,10 @@ public class HealthClub extends ActionBarActivity {
         setContentView(R.layout.activity_health_club);
         EditText editText = (EditText) findViewById(R.id.editMonths);
         editText.clearFocus();
+
+        TextView textMonthly = (TextView) findViewById(R.id.monFee);
+        textMonthly.setText((getString(R.string.monthFee)) + ": 40");
+
     }
 
     @Override
@@ -106,4 +111,46 @@ public class HealthClub extends ActionBarActivity {
 
     //Needs to have a method that will be called whenever something is changed in the form
     //Upon change it needs to update the monthly fee and the total
+    public void clickThings(View view){
+        RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radGroup);
+        RadioButton radioButton = (RadioButton) findViewById(radioGroup.getCheckedRadioButtonId());
+        TextView textMonthly = (TextView) findViewById(R.id.monFee);
+
+        double amount = getMonthlyFee(radioButton.getText().toString());
+        double total = 0;
+
+
+        total += amount;
+
+        textMonthly.setText((getString(R.string.monthFee)) + ": " + total);
+
+    }
+
+    //Gets the monthly fee. Should be used by passing the text of the selected radio button
+    private double getMonthlyFee(String s){
+        double amount;
+        switch (s){
+            case "Standard Adult":
+                amount = 40;
+                break;
+            case "Substandard Adult":
+                amount = 240;
+                break;
+            case "Child":
+                amount = 20;
+                break;
+            case "Student":
+                amount = 25;
+                break;
+            case "Senior Citizen":
+                amount = 30;
+                break;
+            case "Senior non-citizen":
+                amount = 724;
+                break;
+            default:
+                amount = 0;
+        }
+        return amount;
+    }
 }

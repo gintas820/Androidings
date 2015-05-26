@@ -5,6 +5,8 @@
     android:layout_height="match_parent"
     tools:context="com.example.tuf40653.variety.HealthClub"
     android:background="@color/backColor"
+    android:focusableInTouchMode="true"
+
     >
 
     <TextView
@@ -40,6 +42,7 @@
         android:paddingBottom="@dimen/activity_vertical_margin"
         android:background="@color/backColor"
         android:layout_below="@+id/textTitle"
+
         >
 
         <Button
@@ -82,31 +85,37 @@
                     android:layout_height="wrap_content"
                     android:text="@string/stdAdult"
                     android:checked="true"
+                    android:onClick="clickThings"
                     />
                 <RadioButton
                     android:id="@+id/radButton5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:onClick="clickThings"
                     android:text="@string/subAdult"/>
                 <RadioButton
                     android:id="@+id/radButton2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:onClick="clickThings"
                     android:text="@string/child"/>
                 <RadioButton
                     android:id="@+id/radButton3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:onClick="clickThings"
                     android:text="@string/student"/>
                 <RadioButton
                     android:id="@+id/radButton4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:onClick="clickThings"
                     android:text="@string/senior"/>
                 <RadioButton
                     android:id="@+id/radButton6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:onClick="clickThings"
                     android:text="@string/seniorNon"/>
             </RadioGroup>
 
