@@ -15,8 +15,8 @@ public class Location implements Serializable{
     private String country;
     private String city;
 
-
-    //A constructor for initializing all the values
+    /*
+    //A constructor for initializing all the values -- possibly unnecessary
     public Location(float lo, float la, long sset, long srise, String co, String ci){
         this.longitude = lo;
         this.latitude = la;
@@ -24,7 +24,7 @@ public class Location implements Serializable{
         this.sunrise = srise;
         this.country = co;
         this.city = ci;
-    }
+    }   */
 
     //Getters and setters
     public float getLongitude(){
