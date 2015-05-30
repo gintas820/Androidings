@@ -82,5 +82,4 @@ public class JSONParser {
     private static int getInt(String tagName, JSONObject jObj)throws JSONException{
         return jObj.getInt(tagName);
     }
-
 }
