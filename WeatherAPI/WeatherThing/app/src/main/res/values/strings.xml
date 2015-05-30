@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">WeatherThing</string>
     <string name="action_settings">Settings</string>
+    <string name="open_weather_api">http://api.openweathermap.org/data/2.5/weather?q=city,country</string>
 
 
 </resources>
