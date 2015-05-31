@@ -1,5 +1,7 @@
 package com.example.gintas.weatherthing;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -7,10 +9,22 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.app.Activity;
 
+
+import com.example.gintas.weatherthing.Weather;
+import com.example.gintas.weatherthing.Location;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.json.JSONException;
 import org.w3c.dom.Text;
 
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -81,5 +95,22 @@ public class MainActivity extends ActionBarActivity {
             return weather;
         }
 
+        @Override
+        protected  void onPostExecute(Weather weather){
+            super.onPostExecute(weather);
+
+            if(weather.iconData != null && weather.iconData.length > 0){
+                Bitmap image = BitmapFactory.decodeByteArray(weather.iconData, 0, weather.iconData.length);
+                imgView.setImageBitmap(image);
+            }
+
+            cityText.setText(weather.location.getCity() + ", " + weather.location.getCountry());
+            conditionDesc.setText(weather.currentCondition.getCondition() + "(" + weather.currentCondition.getDescription() + ")");
+            temperature.setText("" + Math.round((weather.temperature.getTemp() - 273.15)) + "C");
+            humidity.setText("" + weather.currentCondition.getHumidity() + "%");
+            pressure.setText("" + weather.currentCondition.getPressure() + " hPa");
+            windSpeed.setText("" + weather.wind.getSpeed() + " mps");
+            windDegree.setText("" + weather.wind.getDegrees() + " degrees");
+        }
     }
 }
