@@ -15,14 +15,20 @@ public class WeatherHTTPClient {
     private static String BASE_URL = "http://api.openweathermap.org/data/2.5/weather?q=";
     private static String IMG_URL = "http://openweathermap.org/img/w/";
 
+    //URL thatURL = new URL("http://www.android.com/");
+
+
     public String getWeatherData(String location){
         HttpURLConnection connection = null;
         InputStream input = null;
+
+        //URL thatURL = null;
 
         try{
             //Set up the connection
             connection = (HttpURLConnection) (new URL(BASE_URL + location)).openConnection();
             connection.setRequestMethod("GET");
+            System.out.printf("\n\n" + connection.getRequestMethod());
             connection.setDoInput(true);
             connection.setDoOutput(true);
             connection.connect();
@@ -32,8 +38,10 @@ public class WeatherHTTPClient {
             input = connection.getInputStream();
             BufferedReader buffRead = new BufferedReader(new InputStreamReader(input));
             String line = null;
+
             while ((line = buffRead.readLine()) != null) {
                 buffer.append(line + "\r\n");
+                System.out.println("bruhhh: " + line);
             }
 
                 input.close();
