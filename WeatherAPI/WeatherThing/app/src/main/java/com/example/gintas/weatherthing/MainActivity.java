@@ -85,8 +85,6 @@ public class MainActivity extends ActionBarActivity {
             Weather weather = new Weather();
             String data = ((new WeatherHTTPClient()).getWeatherData(params[0]));
 
-            System.out.println("qwerty: " + data + " <--");
-
             try {
                 weather = JSONParser.getWeather(data);
                 //Get the icon
