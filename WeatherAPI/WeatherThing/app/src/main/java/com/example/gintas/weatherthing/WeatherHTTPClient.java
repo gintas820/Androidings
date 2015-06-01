@@ -36,7 +36,6 @@ public class WeatherHTTPClient {
             while ((line = buffRead.readLine()) != null) {
                 buffer.append(line + "\r\n");
             }
-
                 input.close();
                 connection.disconnect();
                 return buffer.toString();
