@@ -7,11 +7,14 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/backColor"
+    >
 
     <TextView
         android:id="@+id/cityText"
-        style="?android:attr/textAppearanceMedium"
+        style="@style/tempStyle"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -19,8 +22,8 @@
 
     <ImageView
         android:id="@+id/conditionIcon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/cityText"
         />
@@ -31,6 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/conditionIcon"
         android:layout_alignLeft="@+id/conditionIcon"
+        style="@style/AppTheme"
         />
 
     <TextView
