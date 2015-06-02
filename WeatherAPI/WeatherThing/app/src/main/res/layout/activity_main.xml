@@ -14,18 +14,38 @@
     <TextView
         android:id="@+id/cityText"
         style="@style/tempStyle"
-
+        android:textSize="30sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginBottom="15dp"
+        />
+
+    <RelativeLayout
+        android:id="@+id/currentLocationBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_box"
+        android:layout_below="@+id/cityText"
+        >
+
+    <TextView
+        android:id="@+id/currCond"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/currCond"
+        android:layout_centerHorizontal="true"
+        android:textSize="30dp"
         />
 
     <ImageView
         android:id="@+id/conditionIcon"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/cityText"
+        android:layout_centerHorizontal="true"
+
+        android:layout_below="@id/currCond"
         />
 
     <TextView
@@ -33,7 +53,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/conditionIcon"
-        android:layout_alignLeft="@+id/conditionIcon"
+        android:layout_centerHorizontal="true"
         style="@style/AppTheme"
         />
 
@@ -42,9 +62,8 @@
         style="@style/tempStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="12dp"
-        android:layout_alignBaseline="@+id/conditionDesc"
-        android:layout_toRightOf="@+id/conditionDesc"
+        android:layout_below="@+id/conditionDesc"
+        android:layout_centerHorizontal="true"
         />
 
     <TextView
@@ -52,7 +71,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/conditionDesc"
+        android:layout_below="@+id/temperature"
         android:text="Pressure"
         android:layout_marginTop="15dp"
         />
@@ -113,5 +132,6 @@
         android:layout_marginLeft="4dp"
         style="@style/valData"
         />
+    </RelativeLayout>
 
 </RelativeLayout>

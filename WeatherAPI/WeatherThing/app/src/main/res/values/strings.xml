@@ -3,8 +3,12 @@
     <string name="action_settings">Settings</string>
     <string name="open_weather_api">http://api.openweathermap.org/data/2.5/weather?q=city,country</string>
 
+    <color name="darkBlue">#3316193b</color>
     <color name="backColor">#35478c</color>
-    <color name="basicText">#add5f7</color>
     <color name="resultText">#4e7ac7</color>
+    <color name="midBlue">#7fb2f0</color>
+    <color name="basicText">#add5f7</color>
+
+    <string name="currCond">Current Conditions</string>
 
 </resources>
