@@ -106,10 +106,10 @@ public class MainActivity extends ActionBarActivity {
 
             cityText.setText(weather.location.getCity() + ", " + weather.location.getCountry());
             conditionDesc.setText(weather.currentCondition.getCondition() + "(" + weather.currentCondition.getDescription() + ")");
-            temperature.setText("" + Math.round((weather.temperature.getTemp() - 273.15)) + "C");
+            temperature.setText("" + Math.round(((weather.temperature.getTemp() - 273.15) * 1.8) + 32) + " F");
             humidity.setText("" + weather.currentCondition.getHumidity() + "%");
             pressure.setText("" + weather.currentCondition.getPressure() + " hPa");
-            windSpeed.setText("" + weather.wind.getSpeed() + " mps");
+            windSpeed.setText("" + Math.round(weather.wind.getSpeed() * 2.23694) + " mph,");
             windDegree.setText("" + weather.wind.getDegrees() + " degrees");
         }
     }

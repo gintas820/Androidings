@@ -33,7 +33,7 @@ public class JSONParser {
         //Assign the newly created location to the weather object
         weather.location = loc;
 
-        //Get the info from the "weather" tag array, which only has one element
+        //Get the info from the "weather" tag array, which only has one element when receiving current weather
         JSONArray jsonArray = jsonObject.getJSONArray("weather");
 
         //General weather info from "weather" tag in JSON
@@ -59,6 +59,31 @@ public class JSONParser {
         //Cloud info from "clouds" tag in JSON
         JSONObject cloudsObject = getObject("clouds", jsonObject);
         weather.clouds.setPercent(getInt("all", cloudsObject));
+
+        return weather;
+    }
+
+    //Used to parse the JSON data into an array, mainly when there are multiple days of information being pulled
+    //Passes the JSON string as the first parameter, and the number of days covered as the second parameter
+    public static Weather[] getWeatherMulti(String data, int days) throws JSONException{
+        Weather[] weather = new Weather[days];
+
+        //Create a JSON object
+        JSONObject jsonObject = new JSONObject(data);
+
+        Location location = new Location();
+
+        JSONObject coordinateObject = getObject("coord", jsonObject);
+        location.setLatitude(getFloat("lat", coordinateObject));
+        location.setLongitude(getFloat("lon", coordinateObject));
+
+        JSONObject cityObject = getObject("city", jsonObject);
+        location.setCity(getString("name", cityObject));
+        location.setCountry(getString("country", cityObject));
+
+
+
+
 
         return weather;
     }

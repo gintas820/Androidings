@@ -13,6 +13,9 @@ import java.net.URL;
 public class WeatherHTTPClient {
 
     private static String BASE_URL = "http://api.openweathermap.org/data/2.5/weather?q=";
+    private static String FORECAST_5_URL = "http://api.openweathermap.org/data/2.5/forecast?q=Philadelphia";
+    private static String FORECAST_10_URL = "http://api.openweathermap.org/data/2.5/forecast/daily?q=Philadelphia&cnt=10";
+    private static String FORECAST_16_URL = "http://api.openweathermap.org/data/2.5/forecast/daily?q=Philadelphia&cnt=16";
     private static String IMG_URL = "http://openweathermap.org/img/w/";
 
     public String getWeatherData(String location){
