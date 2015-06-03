@@ -1,5 +1,8 @@
 package com.example.gintas.weatherthing;
 
+import java.sql.Time;
+import java.text.SimpleDateFormat;
+
 /**
  * Created by Gintas on 5/30/2015.
  */
@@ -24,6 +27,9 @@ public class Weather {
 
         private float pressure;
         private float humidity;
+
+
+
 
 
         //Getters and setters
@@ -68,6 +74,8 @@ public class Weather {
         public void setHumidity(float humidity) {
             this.humidity = humidity;
         }
+
+
     }
 
     public class Temperature{

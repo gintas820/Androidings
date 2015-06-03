@@ -7,6 +7,8 @@ import org.json.JSONObject;
 import com.example.gintas.weatherthing.Location;
 import com.example.gintas.weatherthing.Weather;
 
+import java.sql.Time;
+
 /**
  * Created by Gintas on 5/30/2015.
  */
@@ -73,16 +75,48 @@ public class JSONParser {
 
         Location location = new Location();
 
-        JSONObject coordinateObject = getObject("coord", jsonObject);
-        location.setLatitude(getFloat("lat", coordinateObject));
-        location.setLongitude(getFloat("lon", coordinateObject));
-
         JSONObject cityObject = getObject("city", jsonObject);
         location.setCity(getString("name", cityObject));
         location.setCountry(getString("country", cityObject));
 
+        JSONObject coordinateObject = getObject("coord", cityObject);
+        location.setLongitude(getFloat("lon", coordinateObject));
+        location.setLatitude(getFloat("lat", coordinateObject));
 
+        JSONArray weatherInfoArray = jsonObject.getJSONArray("list");
 
+        //Go through all the elements of the array and parse their info
+        for(int i = 0; i < weatherInfoArray.length(); i++){
+            weather[i].location = location;
+
+            JSONObject jsonWeather = weatherInfoArray.getJSONObject(i);
+
+            JSONObject mainObj = getObject("main", jsonWeather);
+            JSONObject weatherObj = getObject("weather", jsonWeather);
+            JSONObject cloudsObj = getObject("clouds", jsonWeather);
+            JSONObject windObj = getObject("wind", jsonWeather);
+            JSONObject rainObj = getObject("rain", jsonWeather);
+
+            weather[i].temperature.setTemp(getFloat("temp", mainObj));
+            weather[i].temperature.setMaxTemp(getFloat("temp_max", mainObj));
+            weather[i].temperature.setMinTemp(getFloat("temp_min", mainObj));
+            weather[i].currentCondition.setPressure(getFloat("pressure", mainObj));
+            weather[i].currentCondition.setHumidity(getInt("humidity", mainObj));
+            //weather[i].currentCondition.setT
+
+            weather[i].currentCondition.setWeatherId(getInt("id", weatherObj));
+            weather[i].currentCondition.setCondition(getString("main", weatherObj));
+            weather[i].currentCondition.setDescription(getString("description", weatherObj));
+            weather[i].currentCondition.setIcon(getString("icon", weatherObj));
+
+            weather[i].clouds.setPercent(getInt("all", cloudsObj));
+
+            weather[i].wind.setDegrees(getFloat("deg", windObj));
+            weather[i].wind.setSpeed(getFloat("speed", windObj));
+
+            weather[i].rain.setAmount(getFloat("3h", rainObj));
+
+        }
 
 
         return weather;
@@ -107,4 +141,6 @@ public class JSONParser {
     private static int getInt(String tagName, JSONObject jObj)throws JSONException{
         return jObj.getInt(tagName);
     }
+
+
 }
