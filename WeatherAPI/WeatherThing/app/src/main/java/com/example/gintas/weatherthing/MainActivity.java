@@ -84,13 +84,20 @@ public class MainActivity extends ActionBarActivity {
 
     private class JSONWeatherTask extends AsyncTask<String, Void, Weather>{
 
+        Weather weather5Day1[] = new Weather[36];
+
         @Override
         protected Weather doInBackground(String... params){
             Weather weather = new Weather();
+            //Weather weather5Day1[] = new Weather[36];
             String data[] = ((new WeatherHTTPClient()).getWeatherData(params[0]));
+
+            System.out.println(data[0].toString() + "\nAND SHALALALA\n" + data[1].toString());
 
             try {
                 weather = JSONParser.getWeather(data[0]);
+
+                weather5Day1 = JSONParser.getWeatherMulti(data[1], 36);
                 //Get the icon
                 weather.iconData = ((new WeatherHTTPClient()).getImage(weather.currentCondition.getIcon()));
             }catch (JSONException e){
@@ -115,6 +122,8 @@ public class MainActivity extends ActionBarActivity {
             pressure.setText("" + weather.currentCondition.getPressure() + " hPa");
             windSpeed.setText("" + Math.round(weather.wind.getSpeed() * 2.23694) + " mph,");
             windDegree.setText("" + weather.wind.getDegrees() + " degrees");
+
+            firstHourTime.setText("" + weather5Day1[0].currentCondition.getDateTime());
         }
     }
 }

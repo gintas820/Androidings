@@ -69,6 +69,9 @@ public class JSONParser {
     //Passes the JSON string as the first parameter, and the number of days covered as the second parameter
     public static Weather[] getWeatherMulti(String data, int days) throws JSONException{
         Weather[] weather = new Weather[days];
+        for (int i = 0; i < days; i++){
+            weather[i] = new Weather();
+        }
 
         //Create a JSON object
         JSONObject jsonObject = new JSONObject(data);
@@ -92,7 +95,8 @@ public class JSONParser {
             JSONObject jsonWeather = weatherInfoArray.getJSONObject(i);
 
             JSONObject mainObj = getObject("main", jsonWeather);
-            JSONObject weatherObj = getObject("weather", jsonWeather);
+            JSONArray weatherArray = jsonWeather.getJSONArray("weather");
+            JSONObject weatherObj = weatherArray.getJSONObject(0);
             JSONObject cloudsObj = getObject("clouds", jsonWeather);
             JSONObject windObj = getObject("wind", jsonWeather);
             JSONObject rainObj = getObject("rain", jsonWeather);
@@ -116,9 +120,7 @@ public class JSONParser {
             weather[i].wind.setSpeed(getFloat("speed", windObj));
 
             weather[i].rain.setAmount(getFloat("3h", rainObj));
-
         }
-
 
         return weather;
     }
