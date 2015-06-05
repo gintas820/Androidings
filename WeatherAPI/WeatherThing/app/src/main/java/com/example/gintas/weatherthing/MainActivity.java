@@ -37,6 +37,8 @@ public class MainActivity extends ActionBarActivity {
     private TextView windDegree;
     private ImageView imgView;
 
+    private TextView firstHourTime;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +53,8 @@ public class MainActivity extends ActionBarActivity {
         windSpeed = (TextView) findViewById(R.id.windSpeed);
         windDegree = (TextView) findViewById(R.id.windDeg);
         imgView = (ImageView) findViewById(R.id.conditionIcon);
+
+        firstHourTime = (TextView) findViewById(R.id.timeText1);
 
         JSONWeatherTask task = new JSONWeatherTask();
         task.execute(new String[]{city});
@@ -83,10 +87,10 @@ public class MainActivity extends ActionBarActivity {
         @Override
         protected Weather doInBackground(String... params){
             Weather weather = new Weather();
-            String data = ((new WeatherHTTPClient()).getWeatherData(params[0]));
+            String data[] = ((new WeatherHTTPClient()).getWeatherData(params[0]));
 
             try {
-                weather = JSONParser.getWeather(data);
+                weather = JSONParser.getWeather(data[0]);
                 //Get the icon
                 weather.iconData = ((new WeatherHTTPClient()).getImage(weather.currentCondition.getIcon()));
             }catch (JSONException e){

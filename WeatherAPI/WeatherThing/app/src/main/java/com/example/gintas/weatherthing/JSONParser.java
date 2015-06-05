@@ -86,7 +86,7 @@ public class JSONParser {
         JSONArray weatherInfoArray = jsonObject.getJSONArray("list");
 
         //Go through all the elements of the array and parse their info
-        for(int i = 0; i < weatherInfoArray.length(); i++){
+        for(int i = 0; i < weatherInfoArray.length() && i < weather.length; i++){
             weather[i].location = location;
 
             JSONObject jsonWeather = weatherInfoArray.getJSONObject(i);
@@ -102,12 +102,13 @@ public class JSONParser {
             weather[i].temperature.setMinTemp(getFloat("temp_min", mainObj));
             weather[i].currentCondition.setPressure(getFloat("pressure", mainObj));
             weather[i].currentCondition.setHumidity(getInt("humidity", mainObj));
-            //weather[i].currentCondition.setT
 
             weather[i].currentCondition.setWeatherId(getInt("id", weatherObj));
             weather[i].currentCondition.setCondition(getString("main", weatherObj));
             weather[i].currentCondition.setDescription(getString("description", weatherObj));
             weather[i].currentCondition.setIcon(getString("icon", weatherObj));
+
+            weather[i].currentCondition.setDateTime(getString("dt_txt", jsonWeather));
 
             weather[i].clouds.setPercent(getInt("all", cloudsObj));
 

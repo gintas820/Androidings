@@ -25,11 +25,10 @@ public class Weather {
         private String description;
         private String icon;
 
+        private String dateTime;
+
         private float pressure;
         private float humidity;
-
-
-
 
 
         //Getters and setters
@@ -75,7 +74,8 @@ public class Weather {
             this.humidity = humidity;
         }
 
-
+        public String getDateTime(){return dateTime;}
+        public void setDateTime(String dateTime){ this.dateTime = dateTime; }
     }
 
     public class Temperature{
