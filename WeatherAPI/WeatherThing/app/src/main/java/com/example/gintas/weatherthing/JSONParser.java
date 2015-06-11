@@ -99,7 +99,9 @@ public class JSONParser {
             JSONObject weatherObj = weatherArray.getJSONObject(0);
             JSONObject cloudsObj = getObject("clouds", jsonWeather);
             JSONObject windObj = getObject("wind", jsonWeather);
-            JSONObject rainObj = getObject("rain", jsonWeather);
+          //  JSONObject rainObj = getObject("rain", jsonWeather);
+
+            System.out.println("Got over here");
 
             weather[i].temperature.setTemp(getFloat("temp", mainObj));
             weather[i].temperature.setMaxTemp(getFloat("temp_max", mainObj));
@@ -119,7 +121,7 @@ public class JSONParser {
             weather[i].wind.setDegrees(getFloat("deg", windObj));
             weather[i].wind.setSpeed(getFloat("speed", windObj));
 
-            weather[i].rain.setAmount(getFloat("3h", rainObj));
+         //   weather[i].rain.setAmount(getFloat("3h", rainObj));
         }
 
         return weather;

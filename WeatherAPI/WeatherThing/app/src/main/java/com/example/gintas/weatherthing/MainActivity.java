@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.app.Activity;
 
@@ -84,20 +85,20 @@ public class MainActivity extends ActionBarActivity {
 
     private class JSONWeatherTask extends AsyncTask<String, Void, Weather>{
 
+        //Have the whole 5 day forecast available
         Weather weather5Day1[] = new Weather[36];
 
         @Override
         protected Weather doInBackground(String... params){
             Weather weather = new Weather();
-            //Weather weather5Day1[] = new Weather[36];
             String data[] = ((new WeatherHTTPClient()).getWeatherData(params[0]));
 
-            System.out.println(data[0].toString() + "\nAND SHALALALA\n" + data[1].toString());
-
             try {
+                //get the weather data for current time and for the 5 day forecast
                 weather = JSONParser.getWeather(data[0]);
+                weather5Day1 = JSONParser.getWeatherMulti(data[1], 41);
+                System.out.println("Getting here");
 
-                weather5Day1 = JSONParser.getWeatherMulti(data[1], 36);
                 //Get the icon
                 weather.iconData = ((new WeatherHTTPClient()).getImage(weather.currentCondition.getIcon()));
             }catch (JSONException e){
@@ -124,6 +125,21 @@ public class MainActivity extends ActionBarActivity {
             windDegree.setText("" + weather.wind.getDegrees() + " degrees");
 
             firstHourTime.setText("" + weather5Day1[0].currentCondition.getDateTime());
+
+
+            RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.firstHours);
+            //NEED TO ADD ALL THE NEW ELEMENTS PROGRAMMATICALLY FOR THE WHOLE 5 DAY FORECAST
+/*
+            for (int i = 0; i < weather5Day1.length; i++){
+                TextView textViewDateTime = new TextView(getBaseContext());
+                textViewDateTime.setText("" + weather5Day1[i].currentCondition.getDateTime());
+
+
+                relativeLayout.addView(textViewDateTime);
+
+
+            }
+*/
         }
     }
 }
