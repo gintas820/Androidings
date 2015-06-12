@@ -99,7 +99,7 @@ public class JSONParser {
             JSONObject weatherObj = weatherArray.getJSONObject(0);
             JSONObject cloudsObj = getObject("clouds", jsonWeather);
             JSONObject windObj = getObject("wind", jsonWeather);
-          //  JSONObject rainObj = getObject("rain", jsonWeather);
+            //JSONObject rainObj = getObject("rain", jsonWeather);
 
             System.out.println("Got over here");
 

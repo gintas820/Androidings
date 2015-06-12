@@ -173,6 +173,15 @@
                 android:layout_centerHorizontal="true"
                 />
 
+            <RelativeLayout
+                android:layout_below="@+id/timeText1"
+                android:id="@+id/threeHrHouse"
+                android:layout_width="match_parent"
+                android:layout_height="800dp">
+
+
+            </RelativeLayout>
+
         </RelativeLayout>
 
     </RelativeLayout>

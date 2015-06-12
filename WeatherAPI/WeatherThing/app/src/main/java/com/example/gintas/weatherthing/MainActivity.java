@@ -96,7 +96,7 @@ public class MainActivity extends ActionBarActivity {
             try {
                 //get the weather data for current time and for the 5 day forecast
                 weather = JSONParser.getWeather(data[0]);
-                weather5Day1 = JSONParser.getWeatherMulti(data[1], 41);
+                weather5Day1 = JSONParser.getWeatherMulti(data[1], 40);
                 System.out.println("Getting here");
 
                 //Get the icon
@@ -128,18 +128,42 @@ public class MainActivity extends ActionBarActivity {
 
 
             RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.firstHours);
+            RelativeLayout threeHrHouseLayout = (RelativeLayout) findViewById(R.id.threeHrHouse);
             //NEED TO ADD ALL THE NEW ELEMENTS PROGRAMMATICALLY FOR THE WHOLE 5 DAY FORECAST
-/*
+
             for (int i = 0; i < weather5Day1.length; i++){
+                //Create whatever needs to be created for each element of the 3hourly forecast
+
+                //Definitely need the time -- SHOULD BE FORMATTED A LITTLE DIFFERENTLY
+
+                RelativeLayout relPerDay = new RelativeLayout(getBaseContext());
+                RelativeLayout.LayoutParams forecastRel = (RelativeLayout.LayoutParams) relPerDay.getLayoutParams();
+
+
                 TextView textViewDateTime = new TextView(getBaseContext());
+
+                TextView timeText = (TextView) findViewById(R.id.timeText1);
+                RelativeLayout.LayoutParams firstDay = (RelativeLayout.LayoutParams) findViewById(R.id.firstDay).getLayoutParams();
+
+                //Done to allow the new textboxes to step out of the boundaries of the parent relative layout
+                RelativeLayout.LayoutParams firstHrs = (RelativeLayout.LayoutParams) findViewById(R.id.firstHours).getLayoutParams();
+
                 textViewDateTime.setText("" + weather5Day1[i].currentCondition.getDateTime());
 
+                textViewDateTime.setPadding(0, 10, 0, 0);
+                //textViewDateTime.setId(i + 1);
 
-                relativeLayout.addView(textViewDateTime);
+                firstHrs.height += textViewDateTime.getHeight() + i*10;
+                firstDay.height += textViewDateTime.getHeight() + i*10;      //This works fine, creates a gigantic layout box
+                textViewDateTime.setY(timeText.getY() + /* timeText.getHeight() + */ i * 50);
+
+
+                threeHrHouseLayout.addView(textViewDateTime);
+
 
 
             }
-*/
+
         }
     }
 }
