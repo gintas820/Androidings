@@ -141,6 +141,7 @@ public class MainActivity extends ActionBarActivity {
 
 
                 TextView textViewDateTime = new TextView(getBaseContext());
+                TextView textViewTemp = new TextView(getBaseContext());
 
                 TextView timeText = (TextView) findViewById(R.id.timeText1);
                 RelativeLayout.LayoutParams firstDay = (RelativeLayout.LayoutParams) findViewById(R.id.firstDay).getLayoutParams();
@@ -149,17 +150,22 @@ public class MainActivity extends ActionBarActivity {
                 RelativeLayout.LayoutParams firstHrs = (RelativeLayout.LayoutParams) findViewById(R.id.firstHours).getLayoutParams();
 
                 textViewDateTime.setText("" + weather5Day1[i].currentCondition.getDateTime());
+                textViewTemp.setText("" + Math.round(((weather5Day1[i].temperature.getTemp() - 273.15) * 1.8) + 32) + " F");
+
 
                 textViewDateTime.setPadding(0, 10, 0, 0);
+                textViewTemp.setPadding(500,10,0,0);
                 //textViewDateTime.setId(i + 1);
 
                 firstHrs.height += textViewDateTime.getHeight() + i*10;
                 firstDay.height += textViewDateTime.getHeight() + i*10;      //This works fine, creates a gigantic layout box
-                textViewDateTime.setY(timeText.getY() + /* timeText.getHeight() + */ i * 50);
 
+
+                textViewDateTime.setY(timeText.getY() + /* timeText.getHeight() + */ i * 50);
+                textViewTemp.setY(timeText.getY() + i * 50);
 
                 threeHrHouseLayout.addView(textViewDateTime);
-
+                threeHrHouseLayout.addView(textViewTemp);
 
 
             }
