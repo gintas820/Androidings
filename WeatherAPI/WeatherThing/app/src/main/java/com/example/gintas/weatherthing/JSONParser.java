@@ -101,8 +101,6 @@ public class JSONParser {
             JSONObject windObj = getObject("wind", jsonWeather);
             //JSONObject rainObj = getObject("rain", jsonWeather);
 
-            System.out.println("Got over here");
-
             weather[i].temperature.setTemp(getFloat("temp", mainObj));
             weather[i].temperature.setMaxTemp(getFloat("temp_max", mainObj));
             weather[i].temperature.setMinTemp(getFloat("temp_min", mainObj));
